@@ -3,11 +3,9 @@ package assignments.assignment4;
 import java.util.HashMap;
 import java.util.Map;
 
-import assignments.assignment3.DepeFood;
-import assignments.assignment3.User;
+import assignments.assignment3.MainMenu;
+import assignments.assignment3.assignment2.*;
 import assignments.assignment4.components.form.LoginForm;
-import assignments.assignment4.page.AdminMenu;
-import assignments.assignment4.page.CustomerMenu;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -23,7 +21,7 @@ public class MainApp extends Application {
     public void start(Stage primaryStage) {
         window = primaryStage;
         window.setTitle("DepeFood Ordering System");
-        DepeFood.initUser(); // Initialize users
+        MainMenu.initUser(); // Initialize users
 
         // Initialize all scenes
         Scene loginScene = new LoginForm(window, this).getScene();

@@ -13,11 +13,11 @@ public class LoginManager {
         this.customerSystem = customerSystem;
     }
 
-    public UserSystemCLI getSystem(String role) {
-        if (role.equals("Customer")) {
+    public UserSystemCLI getSystem(String role){
+        if(role == "Customer"){
             return customerSystem;
+        }else{
+            return adminSystem;
         }
-
-        return adminSystem;
     }
 }

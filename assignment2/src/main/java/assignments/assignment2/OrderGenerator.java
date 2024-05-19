@@ -1,4 +1,4 @@
-package assignments.assignment1;
+package assignments.assignment2;
 import java.util.Scanner;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;

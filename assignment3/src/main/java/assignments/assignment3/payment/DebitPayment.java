@@ -1,18 +1,15 @@
 package assignments.assignment3.payment;
 
 public class DebitPayment implements DepeFoodPaymentSystem {
-    private static final double MINIMUM_PAYMENT = 50000;
+    public final double MINIMUM_TOTAL_PRICE = 50000;
 
-    @Override
-    public long processPayment(long saldo, long amount) throws Exception {
-        if (amount < MINIMUM_PAYMENT) {
-            throw new Exception("Jumlah pesanan < 50000 mohon menggunakan metode pembayaran yang lain");
+    public long processPayment(long amount){
+        // check if the amount is valid
+        if(amount < MINIMUM_TOTAL_PRICE){
+            throw new IllegalArgumentException("Jumlah pesanan < 50000 mohon menggunakan metode pembayaran yang lain\n");
         }
-
-        if (saldo < amount) {
-            throw new Exception("Saldo tidak mencukupi mohon menggunakan metode pembayaran yang lain");
-        }
-
+        System.out.println("Berhasil Membayar Bill sebesar Rp "+amount);
         return amount;
     }
+
 }

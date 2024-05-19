@@ -1,54 +1,42 @@
 package assignments.assignment2;
-
-import java.util.ArrayList;
+import java.util.*;
 
 public class User {
-    
+    // attributes
     private String nama;
     private String nomorTelepon;
     private String email;
-    private ArrayList<Order> orderHistory;
-    public String role;
-
     private String lokasi;
+    public String role;
+    private ArrayList<Order> orderHistory;
+
+    // constructor
     public User(String nama, String nomorTelepon, String email, String lokasi, String role){
         this.nama = nama;
         this.nomorTelepon = nomorTelepon;
         this.email = email;
         this.lokasi = lokasi;
         this.role = role;
-        orderHistory = new ArrayList<>();
+        this.orderHistory = new ArrayList<Order>();
     }
-    public String getEmail() {
-        return email;
-    }
-    public String getNama() {
+    // methods
+    public String getNama(){
         return nama;
     }
-    public String getLokasi() {
-        return lokasi;
-    }
-    public String getNomorTelepon() {
+    public String getNomorTelepon(){
         return nomorTelepon;
     }
-    public void addOrderHistory(Order order){
-        orderHistory.add(order);
+    public String getEmail(){
+        return email;
     }
-    public ArrayList<Order> getOrderHistory() {
+    public String getLokasi(){
+        return lokasi;
+    }
+    public ArrayList<Order> getOrderHistory(){
         return orderHistory;
     }
-    public boolean isOrderBelongsToUser(String orderId) {
-        for (Order order : orderHistory) {
-            if (order.getOrderId().equals(orderId)) {
-                return true;
-            }
-        }
-        return false;
-    }
-    @Override
-    public String toString() {
-        // TODO Auto-generated method stub
-        return String.format("User dengan nama %s dan nomor telepon %s", nama, nomorTelepon);
+    public void setOrderHistory(Order newOrder){
+        orderHistory.add(newOrder);
     }
 
 }
